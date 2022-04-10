@@ -41,7 +41,7 @@ class Renamer(threading.Thread):
         for num, path in enumerate(self.paths, start=1):
             time.sleep(0.1)
             file = Path(path)
-            new_file = file.parent.joinpath(f'{self.prefix}FIle{num}{file.suffix}')
+            new_file = file.parent.joinpath(f'{self.prefix}File{num}{file.suffix}')
             file.rename(new_file)
             self.to_rename.delete("1.0", "2.0")
             self.to_fill.insert("end", f"{new_file}\n")
